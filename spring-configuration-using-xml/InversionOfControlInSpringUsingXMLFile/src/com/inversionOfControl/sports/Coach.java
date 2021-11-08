@@ -7,4 +7,8 @@ public interface Coach {
 	// the code below is used to create the signature of a method to give daily workout details
 	// to the players of different sports
 	public String getDailyWorkoutDetails();
+
+	// the code below is used to create the signature of the method to give daily fortunes to the
+	// players of different sports
+	public String getDailyFortuneDetails();
 }

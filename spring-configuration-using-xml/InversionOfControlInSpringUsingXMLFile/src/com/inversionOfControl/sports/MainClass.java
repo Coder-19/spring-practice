@@ -29,17 +29,21 @@ public class MainClass {
 		// the below line of code is used to access the getDailyWorkoutDetails() method from the baseballCoach 
 		// and print the workout details in the console
 		System.out.println(theCoach.getDailyWorkoutDetails());
+
+		// the below line of code is used to access the getDailyFortuneDetails() method from the baseballCoach
+		// class and print the daily fortunes in the console
+		System.out.println("The daily fortunes for the baseball player is: "+theCoach.getDailyFortuneDetails());
 		
 		
 		// the code below is used to get access to the trackCoach bean using the getBean method from the Spring
-		Coach alphaCoach = context.getBean("trackCoach", Coach.class);   // here the trackCoach 
+		Coach alphaCoach = context.getBean("trackCoach", Coach.class);   // here the trackCoach
 		// is the id or the alias that is used to create an object of the TrackCoach class and the 
 		// Coach is the name of the interface
 		
 		// the below line of code is used to access the getdailyWorkoutDetails() method from the trackcoach 
 		// class and print it in the console
 		System.out.println(alphaCoach.getDailyWorkoutDetails());
-		
+
 		
 		// the code below is used to close the context
 		context.close();

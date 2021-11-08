@@ -12,4 +12,11 @@ public class TrackCoach implements Coach {
 		return "Run a hard 5K";
 	}
 
+	// the code below is used to override the signature of the method present in the coach interface to
+	// give daily fortune to the players
+	@Override
+	public String getDailyFortuneDetails() {
+		return null;
+	}
+
 }

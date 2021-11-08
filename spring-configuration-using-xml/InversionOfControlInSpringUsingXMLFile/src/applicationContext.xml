@@ -36,6 +36,15 @@
     	
     </bean>
 
+	<!-- The code below is used to create a bean for the HappyFortuneService class for
+	doing inversion of control -->
+
+	<!-- In the line of code below the id property acts as the alias for the class object and the
+	class property is used to get the location where our java class is located -->
+	<bean id="happyFortune"
+		class="com.dependencyInjectionInSpring.dependencyInterfaceAndClass.HappyFortuneService">
+	</bean>
+
 		
 	<!-- The code below is used to create a bean for the baseballCoach class for doing inversion
 	of control -->
@@ -43,7 +52,12 @@
 	<!-- In the line of code below the id property acts as the alias for the class object and the 
 	class property is used to get the location where our java class is located -->
 	<bean id="baseBallCoach"
-		class="com.inversionOfControl.sports.BaseballCoach">
+		class="com.dependencyInjectionInSpring.constructorInjectionPractice.BaseballCoach">
+
+		<!-- The code below is to use the constructor-args tag to do dependency injection using
+		constructor injection for giving daily fortunes to the baseball players -->
+		<constructor-arg ref="happyFortune"/>
+
 	</bean>
 	
 	<!-- The code below is used to create a bean for the trackcoach class for doing inversion of 
