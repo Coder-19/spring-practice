@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans" 
+            xmlns:context="http://www.springframework.org/schema/context" 
+            xmlns:mvc="http://www.springframework.org/schema/mvc" 
+            xmlns:util="http://www.springframework.org/schema/util" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="
+                http://www.springframework.org/schema/beans     
+                http://www.springframework.org/schema/beans/spring-beans.xsd     
+                http://www.springframework.org/schema/context     
+                http://www.springframework.org/schema/context/spring-context.xsd     
+                http://www.springframework.org/schema/mvc         
+                http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+                http://www.springframework.org/schema/util     
+                http://www.springframework.org/schema/util/spring-util.xsd">
+                
+                
+                
+      
+      <!-- The code below is used to create a bean for the logger class and this bean will be 
+      be set first so that it will be initialized first so as to get the logging messages corectly-->          
+                
+     <!-- 
+	Add a logger config to see logging messages.		
+	- For more detailed logs, set values to "FINEST"
+	- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
+ -->
+    <bean id="myLoggerConfig" 
+    	class="com.configuration.springConfiguration.MyLoggerConfig" 
+    	init-method="initLogger">
+    	
+    	<!-- the code below is used to do the setter injection for rootlogger level and the
+    	printedLogger level setter -->
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    	
+    </bean>
+
+		
+	<!-- The code below is used to create a bean for the baseballCoach class for doing inversion
+	of control -->
+	
+	<!-- In the line of code below the id property acts as the alias for the class object and the 
+	class property is used to get the location where our java class is located -->
+	<bean id="baseBallCoach"
+		class="com.inversionOfControl.sports.BaseballCoach">
+	</bean>
+	
+	<!-- The code below is used to create a bean for the trackcoach class for doing inversion of 
+	control -->
+	
+	<!-- In the line of code below the id property acts as the alias for the class object and the 
+	class property is used to get the location where our java class is located -->
+	<bean id="trackCoach"
+		class="com.inversionOfControl.sports.TrackCoach">
+	</bean>
+	
+	
+</beans>
