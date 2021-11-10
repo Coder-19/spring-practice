@@ -44,6 +44,17 @@ public class MainClass {
 		// class and print it in the console
 		System.out.println(alphaCoach.getDailyWorkoutDetails());
 
+		// the code below is to use the getBean method for accessing the bean from the spring container
+		Coach betaCoach = context.getBean("cricketCoach", Coach.class);   // here the cricketCoach
+		// is the id or the alias that is used to create an object of the CricketCoach class and the
+		// Coach is the name of the interface
+
+		// the code below is used to print the daily workout of the cricket players
+		System.out.println("Cricket Coach: "+betaCoach.getDailyWorkoutDetails());
+
+		// the code below is used to print the daily fortunes for the cricket players
+		System.out.println("Cricket Coach: "+betaCoach.getDailyFortuneDetails());
+
 		
 		// the code below is used to close the context
 		context.close();

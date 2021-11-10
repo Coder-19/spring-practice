@@ -68,6 +68,21 @@
 	<bean id="trackCoach"
 		class="com.inversionOfControl.sports.TrackCoach">
 	</bean>
-	
+
+
+	<!-- The code below is used to create a bean for the cricket coach class for doing inversion of
+	control -->
+
+	<!-- in the line of code below the id property acts as the alias for the class object and the
+		class property is used to get the location where our java class is located -->
+	<bean id="cricketCoach"
+		class="com.dependencyInjectionInSpring.setterInjectionPractice.CricketCoach">
+
+		<!-- the code below is to use the property tag to do the dependency injection using setter injection -->
+		<property name="fortuneService" ref="happyFortune" />  <!-- The attribute name takes the name of the
+		setter that is used for doing setter injection and ref takes the name of the  bean from which we
+		want to get the dependency -->
+
+	</bean>
 	
 </beans>

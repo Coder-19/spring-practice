@@ -29,15 +29,20 @@ public class CricketCoach implements Coach {
         fortuneService = theFortuneService;
     }
 
-    // tbe code below is used to create a method for giving the daily workout to the
+    // tbe code below is used to create a method for giving the daily workout to the cricket players
     @Override
     public String getDailyWorkoutDetails() {
-        return null;
+        return "Practice bowling for 15 minutes daily";
     }
 
+
+    // the code below is used to create a method to give daily fortunes to the cricket players by using setter
+    // injection
     @Override
     public String getDailyFortuneDetails() {
-        return null;
+        // the code below is used to give daily fortunes to the cricket players using the instance of the
+        // fortuneService interface
+        return fortuneService.getDailyFortune();
     }
 
 }
