@@ -4,7 +4,6 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 // the code below is used to create a class for configuring the logger to  show us the logging

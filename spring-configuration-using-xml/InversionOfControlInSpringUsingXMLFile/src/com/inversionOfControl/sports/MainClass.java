@@ -1,6 +1,8 @@
 package com.inversionOfControl.sports;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.dependencyInjectionInSpring.setterInjectionPractice.CricketCoach;
+import com.gettingDataFromPropertiesFile.code.FootballCoach;
 
 // the code below is used to create a main class for the project
 public class MainClass {
@@ -45,15 +47,55 @@ public class MainClass {
 		System.out.println(alphaCoach.getDailyWorkoutDetails());
 
 		// the code below is to use the getBean method for accessing the bean from the spring container
-		Coach betaCoach = context.getBean("cricketCoach", Coach.class);   // here the cricketCoach
+		CricketCoach betaCoach = context.getBean("cricketCoach", CricketCoach.class);   // here the cricketCoach
 		// is the id or the alias that is used to create an object of the CricketCoach class and the
-		// Coach is the name of the interface
+		// CricketCoach is the name of the interface
 
 		// the code below is used to print the daily workout of the cricket players
 		System.out.println("Cricket Coach: "+betaCoach.getDailyWorkoutDetails());
 
 		// the code below is used to print the daily fortunes for the cricket players
 		System.out.println("Cricket Coach: "+betaCoach.getDailyFortuneDetails());
+		
+		// the code below is used to print the name of the cricket team  using the getter method defined 
+		// in the cricketCoach class
+		System.out.println("Cricket Coach: "+betaCoach.getTeamName());
+		
+		// the code below is used to print the email address of the coach using the getter method defined
+		// in the cricketCoach class
+		System.out.println("Cricket Coach: "+betaCoach.getCoachEmailAddress());
+		
+		
+		// the code below is used to get access to the football coach  using getBean from spring
+		FootballCoach gamaCoach = context.getBean("goodCoach", FootballCoach.class);   // here the goodCoach
+		// is the id or the alias that is used to create an object of the FootballCoach class and the
+		// FootballCoach is the name of the interface
+		
+		// the code below is used to print the daily workout of the football players
+		System.out.println("Football Coach: "+gamaCoach.getDailyWorkoutDetails());
+
+		// the code below is used to print the daily fortunes for the football players
+		System.out.println("Football Coach: "+gamaCoach.getDailyFortuneDetails());
+		
+		// the code below is used to print the name of the football team  using the getter method defined 
+		// in the footballCoach class
+		System.out.println("Football Coach: "+gamaCoach.getTeamName());
+		
+		// the code below is used to print the email address of the coach using the getter method defined
+		// in the footballCoach class
+		System.out.println("Football Coach: "+gamaCoach.getCoachEmailAddress());
+		
+		// the code below is used to get access to the TennisCoach using the getBean from the spring
+		Coach thetaCoach = context.getBean("tennisCoach", Coach.class);  // here the tennisCoach
+		// is the id or the alias that is used to create an object of the tennisCoach class and the
+		// Coach is the name of the interface
+		
+		// the code below is used to print the daily workout of the tennis players
+		System.out.println("Tennis Coach: "+thetaCoach.getDailyWorkoutDetails());
+
+		// the code below is used to print the daily fortunes for the tennis players
+		System.out.println("Tennis Coach: "+thetaCoach.getDailyFortuneDetails());
+
 
 		
 		// the code below is used to close the context

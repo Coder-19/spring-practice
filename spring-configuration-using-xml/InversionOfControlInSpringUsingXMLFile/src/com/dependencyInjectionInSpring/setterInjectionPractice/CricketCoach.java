@@ -9,6 +9,13 @@ public class CricketCoach implements Coach {
     // the code below is used create a private field for the FortuneService interface for doing dependency injection
     // using setter injection for giving daily fortunes to the cricket players
     private FortuneService fortuneService;
+    
+    
+    // the code below is used to create a property to get the name of the team
+    private String teamName;
+    
+    // the code below is used to create a property for getting the email address of the coach
+    private String coachEmailAddress;
 
     // the code below is used to create a no-argument constructor for the CricketCoach class
     public CricketCoach(){
@@ -28,8 +35,30 @@ public class CricketCoach implements Coach {
         // the code below is used to set the value of the fortuneService equal to the value of theFortuneService
         fortuneService = theFortuneService;
     }
+    
+    
+    // the code below is used to create the setter for setting the teamName
+    public void setTeamName(String cricketTeamName) {
+    	teamName = cricketTeamName;
+    }
+    
+    // the code below is used to create a getter for getting the teamName
+    public String getTeamName() {
+    	return "The Name of the team is "+teamName;
+    }
+    
+    // the code below is used to create a setter for setting the email address of the coach
+    public void setCoachEmailAddress(String  emailAddress) {
+    	this.coachEmailAddress = emailAddress;
+    }
+    
+    // the code below is used to create a getter for getting the email address of the coach
+    public String getCoachEmailAddress() {
+    	return coachEmailAddress;
+    }
+    
 
-    // tbe code below is used to create a method for giving the daily workout to the cricket players
+    // the code below is used to create a method for giving the daily workout to the cricket players
     @Override
     public String getDailyWorkoutDetails() {
         return "Practice bowling for 15 minutes daily";

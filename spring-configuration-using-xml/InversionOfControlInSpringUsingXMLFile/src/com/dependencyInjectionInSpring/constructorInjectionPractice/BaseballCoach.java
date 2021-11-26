@@ -37,6 +37,14 @@ public class BaseballCoach implements Coach {
 	
 	
 	
+	// the code below is used to create a custom init-method() that will be  executed when the
+	// application starts
+	public void customInitMethod() {
+		// the below line of code is for debugging purpose
+		System.out.println("BaseballCoach: Inside custom init-method");
+	}
+	
+	
 	// the code below is used to override the signature of the method present inside the Coach 
 	// interface to give daily workout details to the players of the baseball sport
 	@Override
@@ -53,6 +61,15 @@ public class BaseballCoach implements Coach {
 		// the code below is to use the fortuneService instance to call the getDailyFortune() method
 		// for giving daily fortunes to the baseball players
 		return fortuneService.getDailyFortune();
+	}
+	
+	
+	
+	// the code below is used to create the custom-destroy method that will be executed when the 
+	// application is going to stop
+	public void customDestroyMethod() {
+		// the below line of code is for debugging purpose
+		System.out.println("Baseball Coach: Inside custom destroy method");
 	}
 
 
