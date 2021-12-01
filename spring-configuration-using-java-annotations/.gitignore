@@ -1,0 +1,7 @@
+/bin/
+/spring-libraries/
+.idea
+.classpath
+.project
+spring-configuration-using-java-annotations.iml
+.settings/
