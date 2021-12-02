@@ -43,9 +43,35 @@ public class MainClass {
 		System.out.println("Cricket Coach: "+gamaCoach.giveDailyFortunes());
 
 
+		// the code below is to use the getBean method to retrive the footballCoach Bean from our spring container
+		Coach thetaCoach = context.getBean("footballCoach", Coach.class);   // here the footballCoach
+		// is the default bean id that the spring will create for the footballCoach class since we haven't created
+		// a bean id and the Coach is the name of our interface
+
+		// the code below is used to print the daily workout details for our football players using the giveDailyWorkoutDetails()
+		// method defined in the footballCoach class
+		System.out.println("Football Coach: "+thetaCoach.giveDailyWorkoutDetails());
+
+		// the code below is used to print the daily fortunes provided by our coach for our football players
+		System.out.println("Football Coach: "+thetaCoach.giveDailyFortunes());
+
+		// the code below is to use the getBean() method for retriving the basketballCoach Bean from our spring
+		// container
+		Coach deltaCoach = context.getBean("basketballCoach", Coach.class);   // here the basketballCoach
+		// is the default bean id that the spring will create for the BasketballCoach class since we haven't created
+		// a bean id and the Coach is the name of our interface
+
+		// the code below is used to print the daily workout details for our basketball players using the giveDailyWorkoutDetails()
+		// method defined in the BasketballCoach class
+		System.out.println("Basketball Coach: "+deltaCoach.giveDailyWorkoutDetails());
+
+		// the code below is used to print the daily fortunes provided by our coach for our basketball players
+		System.out.println("Basketball Coach: "+deltaCoach.giveDailyFortunes());
+
+
 		// the code below is used to close the context
 		context.close();
-		
+
 	}
 
 }
