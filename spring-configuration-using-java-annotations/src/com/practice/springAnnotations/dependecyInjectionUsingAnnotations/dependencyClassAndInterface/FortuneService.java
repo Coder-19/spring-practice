@@ -1,4 +1,4 @@
-package com.practice.springAnnotations.dependecyInjectionUsingAnnotations;
+package com.practice.springAnnotations.dependecyInjectionUsingAnnotations.dependencyClassAndInterface;
 
 // the code below is used to create an interface for creating the signature of method to give daily fortunes
 // to the players of different sports

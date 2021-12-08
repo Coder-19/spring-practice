@@ -13,5 +13,10 @@
 	property here contains the path of the base package for doing component scanning in the 
 	base package and all its sub packages to scan and  register spring beans (this process is
 	done in a recursive manner) -->
+
+
+	<!-- using the context:property-placeholder tag to get the location of the properties file to get the
+	team name and the team email address from the properties file -->
+	<context:property-placeholder location="classpath:sports.properties" />
 	
 </beans>

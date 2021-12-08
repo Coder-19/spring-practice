@@ -4,8 +4,9 @@ package com.practice.springAnnotations.dependecyInjectionUsingAnnotations.fieldI
 // to the Football Players by overriding the signature of the method present  in the Coach interface
 
 import com.practice.springAnnotations.Coach;
-import com.practice.springAnnotations.dependecyInjectionUsingAnnotations.FortuneService;
+import com.practice.springAnnotations.dependecyInjectionUsingAnnotations.dependencyClassAndInterface.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // using the @Component annotation to register this class as a bean when the spring scans this class and register it as
@@ -21,7 +22,11 @@ public class BasketballCoach implements Coach {
     // the code below is to use the @Autowired annotation to help the spring to scan this project and find the
     // class that implements fortuneService interface and do dependency injection by using the giveDailyFortunes()
     // method to give daily fortunes to the basketball players
+
+    // the code below is to use the @Qualifier annotation and passing the bean id of the spring component from which
+    // we want to use the getDailyFortune to give daily fortunes to our basketball players
     @Autowired
+    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
     // the code below is used to override the signature of method to give  daily workout details to the Basketball players

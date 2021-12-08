@@ -1,4 +1,4 @@
-package com.practice.springAnnotations.dependecyInjectionUsingAnnotations;
+package com.practice.springAnnotations.dependecyInjectionUsingAnnotations.dependencyClassAndInterface;
 
 // the code below is used to create a dependency / helper class to override the signature of method present in the FortuneService
 // interface to give daily fortunes to the players of different sports by dependency injection

@@ -1,5 +1,6 @@
 package com.practice.springAnnotations;
 
+import com.practice.springAnnotations.gettingDataFromPropertiesFile.TrackCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 // the code below is used to create the main class for our project
@@ -68,6 +69,25 @@ public class MainClass {
 		// the code below is used to print the daily fortunes provided by our coach for our basketball players
 		System.out.println("Basketball Coach: "+deltaCoach.giveDailyFortunes());
 
+
+		// the code below is to use the getBean() method for retriving the TrackCoach Bean from our spring
+		// container
+		TrackCoach fiCoach = context.getBean("trackCoach", TrackCoach.class);   // here the trackCoach
+		// is the default bean id that the spring will create for the TrackCoach class since we haven't created
+		// a bean id and the Coach is the name of our interface
+
+		// the code below is used to print the daily workout details for our  players using the giveDailyWorkoutDetails()
+		// method defined in the TrackCoach class
+		System.out.println("Track Coach: "+fiCoach.giveDailyWorkoutDetails());
+
+		// the code below is used to print the daily fortunes provided by our coach for our  players
+		System.out.println("Track Coach: "+fiCoach.giveDailyFortunes());
+
+		// the code below is used to print the teamName to the console
+		System.out.println("Track Coach Team Name: "+fiCoach.getTeamName());
+
+		// the code below is used to print the teamEmail address to the console
+		System.out.println("Track Coach Team Email Address: "+fiCoach.getTeamEmailAddress());
 
 		// the code below is used to close the context
 		context.close();

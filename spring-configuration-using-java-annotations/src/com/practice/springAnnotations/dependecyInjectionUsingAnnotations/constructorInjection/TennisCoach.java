@@ -4,8 +4,9 @@ package com.practice.springAnnotations.dependecyInjectionUsingAnnotations.constr
 // the tennis players using the signature of methods defined in the Coach interface
 
 import com.practice.springAnnotations.Coach;
-import com.practice.springAnnotations.dependecyInjectionUsingAnnotations.FortuneService;
+import com.practice.springAnnotations.dependecyInjectionUsingAnnotations.dependencyClassAndInterface.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // the code below is to use the @Component annotation for helping the spring to scan the class and register it as
@@ -25,8 +26,11 @@ public class TennisCoach implements Coach {
     // the code below is to use the @Autowired annotation to help the spring to scan this project and find the
     // class that implements fortuneService interface and do dependency injection by using the giveDailyFortunes()
     // method to give daily fortunes to the tennis players
+
+    // the code below is to use the @Qualifier annotation and passing the bean id of the spring component from which
+    // we want to use the getDailyFortune to give daily fortunes to our tennis players
     @Autowired
-    public TennisCoach(FortuneService theFortuneService){
+    public TennisCoach(@Qualifier("happyFortuneService") FortuneService theFortuneService){
 
         // the below line of code is for debugging purpose
         System.out.println("Tennis Coach: Inside the Tennis Coach constructor");

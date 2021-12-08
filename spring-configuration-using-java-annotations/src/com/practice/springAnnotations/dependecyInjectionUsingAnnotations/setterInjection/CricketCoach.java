@@ -1,8 +1,10 @@
 package com.practice.springAnnotations.dependecyInjectionUsingAnnotations.setterInjection;
 
 import com.practice.springAnnotations.Coach;
-import com.practice.springAnnotations.dependecyInjectionUsingAnnotations.FortuneService;
+import com.practice.springAnnotations.dependecyInjectionUsingAnnotations.dependencyClassAndInterface.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // the code below is used to create a class for giving daily workout details ad daily fortunes to the cricket players
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Component;
 // the code below is to use the @Component annotation so as when the spring will scan this class then it will
 // register it as a bean
 @Component
+@Scope("prototype")   // using the @Scope annotation to make the scope of this class as prototype
 public class CricketCoach implements Coach {
 
     // the code below is used to create a private instance of the FortuneService to give daily fortunes to the
@@ -31,8 +34,11 @@ public class CricketCoach implements Coach {
     // the code below is to use the @Autowired annotation to help the spring to scan this project and find the
     // class that implements fortuneService interface and do dependency injection by using the giveDailyFortunes()
     // method to give daily fortunes to the tennis players
+
+    // the code below is to use the @Qualifier annotation and passing the bean id of the spring component from which
+    // we want to use the getDailyFortune to give daily fortunes to our cricket players
     @Autowired
-    public void setFortuneService(FortuneService theFortuneService){
+    public void setFortuneService(@Qualifier("fileFortuneService") FortuneService theFortuneService){
 
         // the below line of code is for debugging purpose
         System.out.println("Cricket Coach: Inside the SetFortuneService setter");
